@@ -36,7 +36,7 @@ const Toast = ({
   useEffect(() => {
     if (!duration || duration <= 0) return;
     const timer = setTimeout(() => {
-      onDismiss && onDismiss(id);
+      if (onDismiss) onDismiss(id);
     }, duration);
     return () => clearTimeout(timer);
   }, [id, duration, onDismiss]);
@@ -58,7 +58,7 @@ const Toast = ({
       <p className="flex-1 leading-snug">{message}</p>
       <button
         type="button"
-        onClick={() => onDismiss && onDismiss(id)}
+        onClick={() => { if (onDismiss) onDismiss(id); }}
         aria-label="Dismiss notification"
         className="ml-auto shrink-0 rounded p-0.5 opacity-60 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-current"
       >

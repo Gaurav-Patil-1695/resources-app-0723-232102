@@ -128,7 +128,8 @@ const Header = () => {
             <button
               onClick={toggleAccountMenu}
               aria-label="Account menu"
-              aria-expanded={accountMenuOpen}\n              style={{
+              aria-expanded={accountMenuOpen}
+              style={{
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',

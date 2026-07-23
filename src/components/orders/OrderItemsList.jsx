@@ -3,7 +3,7 @@ import placeholderProduct from '@/assets/images/placeholder-product.svg';
 
 function OrderItemRow({ item }) {
   const {
-    id,
+    id: _id,
     name,
     image_url,
     quantity,

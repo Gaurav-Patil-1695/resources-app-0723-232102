@@ -141,7 +141,8 @@ const NotificationItem = ({ notification, onMarkRead }) => {
         >
           <img
             src={checkIcon}
-            alt=""\n            aria-hidden="true"
+            alt=""
+            aria-hidden="true"
             style={{ width: '14px', height: '14px' }}
           />
         </button>

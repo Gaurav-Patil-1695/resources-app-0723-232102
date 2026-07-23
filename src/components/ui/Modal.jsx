@@ -53,7 +53,7 @@ const Modal = ({
       }
     }
     if (e.key === 'Escape') {
-      onClose && onClose();
+      if (onClose) onClose();
     }
   }, [onClose]);
 
@@ -86,7 +86,7 @@ const Modal = ({
 
   const handleOverlayClick = (e) => {
     if (e.target === overlayRef.current) {
-      onClose && onClose();
+      if (onClose) onClose();
     }
   };
 
@@ -125,7 +125,7 @@ const Modal = ({
           )}
           <button
             type="button"
-            onClick={() => onClose && onClose()}
+            onClick={() => { if (onClose) onClose(); }}
             aria-label="Close dialog"
             className="ml-auto rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >

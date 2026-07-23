@@ -58,7 +58,7 @@ const RegisterForm = ({ onSubmit, isLoading = false, error = null }) => {
       return;
     }
     if (onSubmit) {
-      const { confirmPassword, ...payload } = formData;
+      const { confirmPassword: _confirmPassword, ...payload } = formData;
       onSubmit(payload);
     }
   };

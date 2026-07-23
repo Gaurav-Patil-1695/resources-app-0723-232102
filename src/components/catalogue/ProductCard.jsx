@@ -4,7 +4,7 @@ import starIcon from '@/assets/icons/star.svg';
 
 const ProductCard = ({ product, onClick }) => {
   const {
-    id,
+    id: _id,
     name,
     image,
     priceIncTax,

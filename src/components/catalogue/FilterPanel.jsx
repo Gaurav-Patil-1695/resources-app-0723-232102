@@ -48,7 +48,7 @@ const FilterPanel = ({
   brands = [],
   priceRange = { min: 0, max: 1000 },
   currentPriceRange = { min: 0, max: 1000 },
-  ratings = [1, 2, 3, 4, 5],
+  ratings: _ratings = [1, 2, 3, 4, 5],
   selectedBrands = [],
   selectedRating = null,
   onBrandChange,
