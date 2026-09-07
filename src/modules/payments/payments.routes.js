@@ -1,0 +1,21 @@
+const express = require('express');
+const router = express.Router();
+const paymentsController = require('./payments.controller');
+const { validateInitiatePayment, validateCallback, validateRetry } = require('./payments.validator');
+
+// POST /payments/initiate
+router.post('/initiate', validateInitiatePayment, paymentsController.initiatePayment);
+
+// POST /payments/callback (webhook/callback from payment provider)
+router.post('/callback', validateCallback, paymentsController.handleCallback);
+
+// POST /payments/confirm
+router.post('/confirm', paymentsController.confirmPayment);
+
+// GET /payments/:paymentId
+router.get('/:paymentId', paymentsController.getPayment);
+
+// POST /payments/:paymentId/retry
+router.post('/:paymentId/retry', validateRetry, paymentsController.retryPayment);
+
+module.exports = router;
